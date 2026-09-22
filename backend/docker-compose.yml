@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reelvault_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - API_KEY=${API_KEY}
+      - INSTAGRAM_COOKIES_PATH=/app/secrets/cookies.txt
+      - AI_PROVIDER=${AI_PROVIDER:-gemini}
+      - AI_API_KEY=${AI_API_KEY}
+      - AI_MODEL=${AI_MODEL:-gemini-2.0-flash}
+    volumes:
+      - ./secrets:/app/secrets:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reelvault_worker
+    restart: unless-stopped
+    command: ["python", "-m", "app.workers.poller"]
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - INSTAGRAM_COOKIES_PATH=/app/secrets/cookies.txt
+      - WORKER_POLL_INTERVAL=${WORKER_POLL_INTERVAL:-3.0}
+      - MAX_PROCESSING_ATTEMPTS=${MAX_PROCESSING_ATTEMPTS:-3}
+      - WHISPER_MODEL=${WHISPER_MODEL:-small}
+      - WHISPER_CPU_THREADS=${WHISPER_CPU_THREADS:-4}
+      - AI_PROVIDER=${AI_PROVIDER:-gemini}
+      - AI_API_KEY=${AI_API_KEY}
+      - AI_MODEL=${AI_MODEL:-gemini-2.0-flash}
+      - TEMP_MEDIA_DIR=/tmp/reelvault
+    volumes:
+      - ./secrets:/app/secrets:ro
+      - huggingface_cache:/root/.cache/huggingface
+      - temp_storage:/tmp/reelvault
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  huggingface_cache:
+  temp_storage:
