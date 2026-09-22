@@ -1,4 +1,4 @@
-# Multi-stage optimized Dockerfile for ReelVault API and Worker
+# Multi-stage optimized Dockerfile for ReelVault on Render / Cloud
 FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -24,15 +24,19 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Pre-download Whisper model into the container image to prevent runtime latency
+# Pre-download Whisper base model (lightweight, ~140MB, fits easily in Render 512MB RAM)
 ARG PRELOAD_WHISPER=true
+ARG PRELOAD_MODEL=base
 RUN if [ "$PRELOAD_WHISPER" = "true" ] ; then \
-        python -c "from faster_whisper import WhisperModel; WhisperModel('small', device='cpu', compute_type='int8')" ; \
+        python -c "from faster_whisper import WhisperModel; WhisperModel('$PRELOAD_MODEL', device='cpu', compute_type='int8')" ; \
     fi
 
 COPY . .
 
-EXPOSE 8000
+# Ensure entrypoint script is executable
+RUN chmod +x entrypoint.sh
 
-# Default entrypoint runs FastAPI API server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 8000 10000
+
+# Entrypoint starts both the Worker daemon and FastAPI on $PORT
+CMD ["./entrypoint.sh"]

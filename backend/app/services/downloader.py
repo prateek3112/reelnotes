@@ -2,6 +2,7 @@ import os
 import re
 from typing import Any, Dict, Optional, TypedDict
 import yt_dlp
+from app.config import settings
 from app.core.exceptions import DownloadError
 from app.core.logging import logger
 
@@ -24,7 +25,17 @@ class MediaDownloader:
     """
 
     def __init__(self, cookies_path: Optional[str] = None):
-        self.cookies_path = cookies_path or os.getenv("INSTAGRAM_COOKIES_PATH")
+        self.cookies_path = cookies_path or settings.INSTAGRAM_COOKIES_PATH
+        # Check if cookies were provided directly via environment variable
+        if settings.INSTAGRAM_COOKIES_TEXT and settings.INSTAGRAM_COOKIES_TEXT.strip():
+            temp_cookie_file = "/tmp/instagram_cookies.txt"
+            try:
+                with open(temp_cookie_file, "w") as f:
+                    f.write(settings.INSTAGRAM_COOKIES_TEXT.strip() + "\n")
+                self.cookies_path = temp_cookie_file
+                logger.info(f"Loaded Instagram cookies from environment variable to {temp_cookie_file}")
+            except Exception as e:
+                logger.warning(f"Failed to write INSTAGRAM_COOKIES_TEXT to temp file: {e}")
 
     @staticmethod
     def extract_shortcode(url: str) -> Optional[str]:
@@ -83,7 +94,6 @@ class MediaDownloader:
                     downloaded_file = f"{base}.mp4"
 
                 if not os.path.exists(downloaded_file):
-                    # Check if any file matching shortcode was created in output_dir
                     for f in os.listdir(output_dir):
                         if f.startswith(extracted_shortcode):
                             downloaded_file = os.path.join(output_dir, f)

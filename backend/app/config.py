@@ -22,11 +22,15 @@ class Settings(BaseSettings):
     MAX_PROCESSING_ATTEMPTS: int = 3
     TEMP_MEDIA_DIR: str = "/tmp/reelvault"
 
-    # Faster Whisper STT Settings
-    WHISPER_MODEL: str = "small"
-    WHISPER_CPU_THREADS: int = 4
-    WHISPER_COMPUTE_TYPE: str = "int8"  # int8 on CPU, float16 on GPU
+    # Transcription Settings
+    # "whisper" (local faster-whisper), "groq" (cloud Whisper Large v3 - 100% free, 0 RAM), or "openai"
+    TRANSCRIPTION_PROVIDER: str = "whisper"
+    WHISPER_MODEL: str = "base"  # base or tiny for low-RAM hosts like Render Free/Starter, small for >=2GB RAM
+    WHISPER_CPU_THREADS: int = 2
+    WHISPER_COMPUTE_TYPE: str = "int8"
     WHISPER_CACHE_DIR: Optional[str] = None
+    GROQ_API_KEY: Optional[str] = None
+    OPENAI_API_KEY: Optional[str] = None
 
     # AI Analysis Provider Settings
     AI_PROVIDER: str = "gemini"  # gemini, groq, ollama, openai
@@ -36,6 +40,7 @@ class Settings(BaseSettings):
 
     # Instagram Acquisition
     INSTAGRAM_COOKIES_PATH: Optional[str] = "./secrets/cookies.txt"
+    INSTAGRAM_COOKIES_TEXT: Optional[str] = None  # Direct paste into environment variable
 
     model_config = SettingsConfigDict(
         env_file=".env",
