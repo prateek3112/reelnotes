@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C1E0983B98DA980FB4A8637 /* ReelVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95FFE4D167198402B36A5E7 /* ReelVaultApp.swift */; };
+		19FC1F211D77EB1A6623CA33 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0308B2DB942835228EBAD2 /* SupabaseConfig.swift */; };
+		1A96CC565231515CED3E27EF /* RealtimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769966BE6AB78BE2FC956B88 /* RealtimeService.swift */; };
+		2102BD7B394E6D506F7DD294 /* SharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA8EB471AD7B256E4DEA397 /* SharedStorage.swift */; };
+		21A3BF1BD7BB99931480C670 /* Reel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52D4EB0711A28DE3945173 /* Reel.swift */; };
+		26D51B91B4A38F8F72B9238C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9C2441612A783E1E077DD /* SearchView.swift */; };
+		27DE44B5B72585E29043B4D4 /* ReelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297DC0168330BF750625B28 /* ReelItem.swift */; };
+		3465ADFABEB812E8DE1B31FD /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE76ACF91E3A012BC9C2C4F /* SupabaseService.swift */; };
+		45A7A2716F6AAE48BE6A6E39 /* ReelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F347BD48DAFCF0404A493B97 /* ReelCardView.swift */; };
+		4BAD0FEAC41F2CA4D9032E7E /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2BBE36B9DA0B37437F9DA /* LibraryViewModel.swift */; };
+		4F5AC2C82D20B346F4BAAD1D /* ProcessingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142A4D926D252CAAA366490 /* ProcessingStatus.swift */; };
+		620A7805F4CC4FBD2156AA2B /* ReelDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EBAC91010A8F730C45265 /* ReelDetailViewModel.swift */; };
+		64195ADA51B913F6E4E19555 /* ShareExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD50B7235CE4BADC35CCCC0 /* ShareExtractor.swift */; };
+		679215FEDD21B253EE898BDB /* ErrorBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57328CC3DDEFEAFBC73BE60E /* ErrorBannerView.swift */; };
+		679ED418CF89564BAF1E8826 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2655B8CE24750FC50CD7B1A /* ShareViewController.swift */; };
+		7520AF49AD307747938322E2 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD04633955015E94030CDC87 /* LibraryView.swift */; };
+		83A5DA2A67D8A81749C51DFC /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC177B60963BFE32EA8532B /* BackendClient.swift */; };
+		8F4F6EAB60FF95C21D9910DC /* ReelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F339556AC28F316B78C9935F /* ReelRepository.swift */; };
+		90209B8AACEB080DFF584596 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D036B23CB3D814776768A1D /* SettingsView.swift */; };
+		97233AC90212BD5AB5D02E5D /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E48FEE0F7CB698576FE8CC /* URLValidator.swift */; };
+		A29431AB6188013994EA7A03 /* ReelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BEE28559DE504552FD8D2F /* ReelDetailView.swift */; };
+		A4C13579E61C975533195ECC /* SharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA8EB471AD7B256E4DEA397 /* SharedStorage.swift */; };
+		ACDC0E13F266255C8C831BCC /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 193A94DE1CEE801C879226B1 /* Supabase */; };
+		BDC9E688C2ECF1BF3C25857D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775133BC40BD86F8ED9A3694 /* SettingsViewModel.swift */; };
+		CC757265AB42016FF75AB9BD /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E48FEE0F7CB698576FE8CC /* URLValidator.swift */; };
+		CF35E50E1D7718B45D27F5A9 /* ReelVaultShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 73EB25D0DCFCE27EB2312C2D /* ReelVaultShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4EFC55624F9D462570A8566 /* ShareExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5F3AEFC1492B40087B48D /* ShareExtensionView.swift */; };
+		D7218B5B0760CDBF9D998236 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54381E0874B563D02CEA929 /* ContentView.swift */; };
+		F19B2265E28B3AFB6F35A530 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7648DA55F2EBFCFFB03F728 /* EmptyStateView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B690331C4133D232D4D48B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0932FBD74069C4667DE6F28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D68972D59531FB305C042C69;
+			remoteInfo = ReelVaultShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B74A18C695B313A25A15620 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CF35E50E1D7718B45D27F5A9 /* ReelVaultShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		016EBAC91010A8F730C45265 /* ReelDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelDetailViewModel.swift; sourceTree = "<group>"; };
+		28BE6E8F46ECFA15C7590A61 /* ReelVault.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ReelVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E2BBE36B9DA0B37437F9DA /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		37BEE28559DE504552FD8D2F /* ReelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelDetailView.swift; sourceTree = "<group>"; };
+		4A0308B2DB942835228EBAD2 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
+		4D52D4EB0711A28DE3945173 /* Reel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reel.swift; sourceTree = "<group>"; };
+		57328CC3DDEFEAFBC73BE60E /* ErrorBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
+		73EB25D0DCFCE27EB2312C2D /* ReelVaultShareExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ReelVaultShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		769966BE6AB78BE2FC956B88 /* RealtimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeService.swift; sourceTree = "<group>"; };
+		775133BC40BD86F8ED9A3694 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7D036B23CB3D814776768A1D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84D5F3AEFC1492B40087B48D /* ShareExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionView.swift; sourceTree = "<group>"; };
+		B297DC0168330BF750625B28 /* ReelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelItem.swift; sourceTree = "<group>"; };
+		B95FFE4D167198402B36A5E7 /* ReelVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelVaultApp.swift; sourceTree = "<group>"; };
+		C7648DA55F2EBFCFFB03F728 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		CD04633955015E94030CDC87 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		CDC177B60963BFE32EA8532B /* BackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
+		CEE9C2441612A783E1E077DD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D2655B8CE24750FC50CD7B1A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		DDA8EB471AD7B256E4DEA397 /* SharedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStorage.swift; sourceTree = "<group>"; };
+		DFD50B7235CE4BADC35CCCC0 /* ShareExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtractor.swift; sourceTree = "<group>"; };
+		E54381E0874B563D02CEA929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F142A4D926D252CAAA366490 /* ProcessingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingStatus.swift; sourceTree = "<group>"; };
+		F339556AC28F316B78C9935F /* ReelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelRepository.swift; sourceTree = "<group>"; };
+		F347BD48DAFCF0404A493B97 /* ReelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelCardView.swift; sourceTree = "<group>"; };
+		F9E48FEE0F7CB698576FE8CC /* URLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
+		FAE76ACF91E3A012BC9C2C4F /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8ECF948ABF2F6F1B6C448CC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDC0E13F266255C8C831BCC /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0129FBC963B3C89DA0DB62B4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9C2441612A783E1E077DD /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		42552048A476E9C599902C34 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				57328CC3DDEFEAFBC73BE60E /* ErrorBannerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4DDB8E8E988C6DD5C8C7FF75 = {
+			isa = PBXGroup;
+			children = (
+				F872244FCA2FABC494A9B583 /* ReelVault */,
+				B6067331A1810A7CD06D9FEC /* ReelVaultShareExtension */,
+				D3F5D5973FA098B82C9129F0 /* Shared */,
+				DE354563DF4816201BA52635 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51C46A3D50253B12F188048B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C7648DA55F2EBFCFFB03F728 /* EmptyStateView.swift */,
+				CD04633955015E94030CDC87 /* LibraryView.swift */,
+				F347BD48DAFCF0404A493B97 /* ReelCardView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5E1C2B2D8F87D3C84E660CEE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7D036B23CB3D814776768A1D /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		63B701BA9C0C25FBB9687582 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				769966BE6AB78BE2FC956B88 /* RealtimeService.swift */,
+				F339556AC28F316B78C9935F /* ReelRepository.swift */,
+				FAE76ACF91E3A012BC9C2C4F /* SupabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		892954CC48D3B70395E51091 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4A0308B2DB942835228EBAD2 /* SupabaseConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B6067331A1810A7CD06D9FEC /* ReelVaultShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CDC177B60963BFE32EA8532B /* BackendClient.swift */,
+				84D5F3AEFC1492B40087B48D /* ShareExtensionView.swift */,
+				DFD50B7235CE4BADC35CCCC0 /* ShareExtractor.swift */,
+				D2655B8CE24750FC50CD7B1A /* ShareViewController.swift */,
+			);
+			path = ReelVaultShareExtension;
+			sourceTree = "<group>";
+		};
+		B9EC497CC811245B3CD48598 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				33E2BBE36B9DA0B37437F9DA /* LibraryViewModel.swift */,
+				016EBAC91010A8F730C45265 /* ReelDetailViewModel.swift */,
+				775133BC40BD86F8ED9A3694 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D3F5D5973FA098B82C9129F0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DDA8EB471AD7B256E4DEA397 /* SharedStorage.swift */,
+				F9E48FEE0F7CB698576FE8CC /* URLValidator.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DAE2DD105E1B1A50B78948C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F142A4D926D252CAAA366490 /* ProcessingStatus.swift */,
+				4D52D4EB0711A28DE3945173 /* Reel.swift */,
+				B297DC0168330BF750625B28 /* ReelItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE354563DF4816201BA52635 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28BE6E8F46ECFA15C7590A61 /* ReelVault.app */,
+				73EB25D0DCFCE27EB2312C2D /* ReelVaultShareExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEE1CC67B233F3FAE75CC971 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E54381E0874B563D02CEA929 /* ContentView.swift */,
+				42552048A476E9C599902C34 /* Components */,
+				F455F8FB6FC5C633EA59BCA9 /* Detail */,
+				51C46A3D50253B12F188048B /* Library */,
+				0129FBC963B3C89DA0DB62B4 /* Search */,
+				5E1C2B2D8F87D3C84E660CEE /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F455F8FB6FC5C633EA59BCA9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				37BEE28559DE504552FD8D2F /* ReelDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F872244FCA2FABC494A9B583 /* ReelVault */ = {
+			isa = PBXGroup;
+			children = (
+				B95FFE4D167198402B36A5E7 /* ReelVaultApp.swift */,
+				892954CC48D3B70395E51091 /* Config */,
+				DAE2DD105E1B1A50B78948C5 /* Models */,
+				63B701BA9C0C25FBB9687582 /* Services */,
+				B9EC497CC811245B3CD48598 /* ViewModels */,
+				DEE1CC67B233F3FAE75CC971 /* Views */,
+			);
+			path = ReelVault;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38DCFB64EA1DE08BF41BE232 /* ReelVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A89C1B65C89C63CFBF44A93 /* Build configuration list for PBXNativeTarget "ReelVault" */;
+			buildPhases = (
+				52B5FBD24E9F2731667B7A73 /* Sources */,
+				8ECF948ABF2F6F1B6C448CC7 /* Frameworks */,
+				8B74A18C695B313A25A15620 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEB83AC0BEDEFCD1542B2415 /* PBXTargetDependency */,
+			);
+			name = ReelVault;
+			packageProductDependencies = (
+				193A94DE1CEE801C879226B1 /* Supabase */,
+			);
+			productName = ReelVault;
+			productReference = 28BE6E8F46ECFA15C7590A61 /* ReelVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D68972D59531FB305C042C69 /* ReelVaultShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F0AA15D3E6B369D492649DF /* Build configuration list for PBXNativeTarget "ReelVaultShareExtension" */;
+			buildPhases = (
+				6B4CC77F690BECA96BCEA759 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReelVaultShareExtension;
+			packageProductDependencies = (
+			);
+			productName = ReelVaultShareExtension;
+			productReference = 73EB25D0DCFCE27EB2312C2D /* ReelVaultShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0932FBD74069C4667DE6F28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					38DCFB64EA1DE08BF41BE232 = {
+						ProvisioningStyle = Automatic;
+					};
+					D68972D59531FB305C042C69 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8E754672D051CCF7B764CCF4 /* Build configuration list for PBXProject "ReelVault" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4DDB8E8E988C6DD5C8C7FF75;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A7087CB3AAB9CB850D67E8A1 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38DCFB64EA1DE08BF41BE232 /* ReelVault */,
+				D68972D59531FB305C042C69 /* ReelVaultShareExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B5FBD24E9F2731667B7A73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7218B5B0760CDBF9D998236 /* ContentView.swift in Sources */,
+				F19B2265E28B3AFB6F35A530 /* EmptyStateView.swift in Sources */,
+				679215FEDD21B253EE898BDB /* ErrorBannerView.swift in Sources */,
+				7520AF49AD307747938322E2 /* LibraryView.swift in Sources */,
+				4BAD0FEAC41F2CA4D9032E7E /* LibraryViewModel.swift in Sources */,
+				4F5AC2C82D20B346F4BAAD1D /* ProcessingStatus.swift in Sources */,
+				1A96CC565231515CED3E27EF /* RealtimeService.swift in Sources */,
+				21A3BF1BD7BB99931480C670 /* Reel.swift in Sources */,
+				45A7A2716F6AAE48BE6A6E39 /* ReelCardView.swift in Sources */,
+				A29431AB6188013994EA7A03 /* ReelDetailView.swift in Sources */,
+				620A7805F4CC4FBD2156AA2B /* ReelDetailViewModel.swift in Sources */,
+				27DE44B5B72585E29043B4D4 /* ReelItem.swift in Sources */,
+				8F4F6EAB60FF95C21D9910DC /* ReelRepository.swift in Sources */,
+				0C1E0983B98DA980FB4A8637 /* ReelVaultApp.swift in Sources */,
+				26D51B91B4A38F8F72B9238C /* SearchView.swift in Sources */,
+				90209B8AACEB080DFF584596 /* SettingsView.swift in Sources */,
+				BDC9E688C2ECF1BF3C25857D /* SettingsViewModel.swift in Sources */,
+				2102BD7B394E6D506F7DD294 /* SharedStorage.swift in Sources */,
+				19FC1F211D77EB1A6623CA33 /* SupabaseConfig.swift in Sources */,
+				3465ADFABEB812E8DE1B31FD /* SupabaseService.swift in Sources */,
+				CC757265AB42016FF75AB9BD /* URLValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B4CC77F690BECA96BCEA759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83A5DA2A67D8A81749C51DFC /* BackendClient.swift in Sources */,
+				D4EFC55624F9D462570A8566 /* ShareExtensionView.swift in Sources */,
+				64195ADA51B913F6E4E19555 /* ShareExtractor.swift in Sources */,
+				679ED418CF89564BAF1E8826 /* ShareViewController.swift in Sources */,
+				A4C13579E61C975533195ECC /* SharedStorage.swift in Sources */,
+				97233AC90212BD5AB5D02E5D /* URLValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEB83AC0BEDEFCD1542B2415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D68972D59531FB305C042C69 /* ReelVaultShareExtension */;
+			targetProxy = B690331C4133D232D4D48B7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C2222AE46D10FDABE76DD8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReelVault/ReelVault.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ReelVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelvault.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		35B2C3BE65CCC4FE75347A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		496138E077B476EB9447353F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReelVaultShareExtension/ReelVaultShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = ReelVaultShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelvault.app.share;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		767A40DEC588A95FC4482F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReelVault/ReelVault.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ReelVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelvault.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8A1CB9C699CF9A7EB33953E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ReelVaultShareExtension/ReelVaultShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = ReelVaultShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reelvault.app.share;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FF42371864A2E50DF437C9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E754672D051CCF7B764CCF4 /* Build configuration list for PBXProject "ReelVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF42371864A2E50DF437C9B0 /* Debug */,
+				35B2C3BE65CCC4FE75347A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A89C1B65C89C63CFBF44A93 /* Build configuration list for PBXNativeTarget "ReelVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C2222AE46D10FDABE76DD8E /* Debug */,
+				767A40DEC588A95FC4482F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9F0AA15D3E6B369D492649DF /* Build configuration list for PBXNativeTarget "ReelVaultShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1CB9C699CF9A7EB33953E6 /* Debug */,
+				496138E077B476EB9447353F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A7087CB3AAB9CB850D67E8A1 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.50.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		193A94DE1CEE801C879226B1 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7087CB3AAB9CB850D67E8A1 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C0932FBD74069C4667DE6F28 /* Project object */;
+}
