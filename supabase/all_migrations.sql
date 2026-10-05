@@ -127,18 +127,23 @@ CREATE INDEX IF NOT EXISTS idx_reels_shortcode
     ON public.reels (shortcode)
     WHERE shortcode IS NOT NULL;
 
+-- GIN Full-Text Search on spoken transcripts, titles, summaries, and topics
 CREATE INDEX IF NOT EXISTS idx_reels_fts
     ON public.reels
     USING gin (
-        to_tsvector('english',
+        to_tsvector('english'::regconfig,
             coalesce(title, '') || ' ' ||
             coalesce(topic, '') || ' ' ||
             coalesce(summary, '') || ' ' ||
             coalesce(transcript, '') || ' ' ||
-            coalesce(creator_username, '') || ' ' ||
-            coalesce(array_to_string(tags, ' '), '')
+            coalesce(creator_username, '')
         )
     );
+
+-- GIN Index for array tags search
+CREATE INDEX IF NOT EXISTS idx_reels_tags
+    ON public.reels
+    USING gin (tags);
 
 -- 5. ATOMIC QUEUE CLAIM RPC FUNCTION
 CREATE OR REPLACE FUNCTION claim_next_job(worker_identifier TEXT)

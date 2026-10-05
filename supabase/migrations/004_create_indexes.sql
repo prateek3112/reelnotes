@@ -26,12 +26,16 @@ CREATE INDEX IF NOT EXISTS idx_reels_shortcode
 CREATE INDEX IF NOT EXISTS idx_reels_fts
     ON public.reels
     USING gin (
-        to_tsvector('english',
+        to_tsvector('english'::regconfig,
             coalesce(title, '') || ' ' ||
             coalesce(topic, '') || ' ' ||
             coalesce(summary, '') || ' ' ||
             coalesce(transcript, '') || ' ' ||
-            coalesce(creator_username, '') || ' ' ||
-            coalesce(array_to_string(tags, ' '), '')
+            coalesce(creator_username, '')
         )
     );
+
+-- Native array GIN index for fast tags search
+CREATE INDEX IF NOT EXISTS idx_reels_tags
+    ON public.reels
+    USING gin (tags);
