@@ -12,20 +12,20 @@ public enum ShareExtractor {
         for item in inputItems {
             guard let attachments = item.attachments else { continue }
 
-            // 1. First Pass: Direct URL Provider
+            // 1. First Pass: Direct URL Provider using NSURL (NSItemProviderReading)
             for provider in attachments {
-                if provider.canLoadObject(ofClass: URL.self) {
-                    if let rawURL = try? await loadObject(provider: provider, ofClass: URL.self) {
+                if provider.canLoadObject(ofClass: NSURL.self) {
+                    if let rawURL = try? await loadObject(provider: provider, ofClass: NSURL.self) as URL {
                         return URLValidator.sanitizeInstagramURL(rawURL)
                     }
                 }
             }
 
-            // 2. Second Pass: Plain text with embedded Instagram URL
+            // 2. Second Pass: Plain text with embedded Instagram URL using NSString (NSItemProviderReading)
             for provider in attachments {
-                if provider.canLoadObject(ofClass: String.self) {
-                    if let text = try? await loadObject(provider: provider, ofClass: String.self),
-                       let extracted = extractURL(fromText: text) {
+                if provider.canLoadObject(ofClass: NSString.self) {
+                    if let nsText = try? await loadObject(provider: provider, ofClass: NSString.self),
+                       let extracted = extractURL(fromText: String(nsText)) {
                         return URLValidator.sanitizeInstagramURL(extracted)
                     }
                 }
@@ -36,6 +36,16 @@ public enum ShareExtractor {
                 if provider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
                     if let url = await loadItemAsURL(provider: provider) {
                         return URLValidator.sanitizeInstagramURL(url)
+                    }
+                }
+            }
+
+            // 4. Fourth Pass: UTType.plainText identifier
+            for provider in attachments {
+                if provider.hasItemConformingToTypeIdentifier(UTType.plainText.identifier) {
+                    if let text = await loadItemAsString(provider: provider),
+                       let extracted = extractURL(fromText: text) {
+                        return URLValidator.sanitizeInstagramURL(extracted)
                     }
                 }
             }
@@ -78,6 +88,20 @@ public enum ShareExtractor {
                     continuation.resume(returning: nsUrl as URL)
                 } else if let str = item as? String, let url = URL(string: str) {
                     continuation.resume(returning: url)
+                } else {
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+
+    private static func loadItemAsString(provider: NSItemProvider) async -> String? {
+        await withCheckedContinuation { continuation in
+            provider.loadItem(forTypeIdentifier: UTType.plainText.identifier, options: nil) { item, _ in
+                if let str = item as? String {
+                    continuation.resume(returning: str)
+                } else if let nsStr = item as? NSString {
+                    continuation.resume(returning: String(nsStr))
                 } else {
                     continuation.resume(returning: nil)
                 }

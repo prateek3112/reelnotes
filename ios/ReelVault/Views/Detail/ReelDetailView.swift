@@ -268,7 +268,7 @@ public struct ReelDetailView: View {
             Text("Source: Instagram Reel")
         }
         .font(.caption2)
-        .foregroundColor(.tertiaryLabel)
+        .foregroundColor(.secondary)
         .padding(.horizontal, 4)
     }
 }

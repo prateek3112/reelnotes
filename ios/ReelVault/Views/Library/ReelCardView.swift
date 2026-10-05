@@ -97,7 +97,7 @@ public struct ReelCardView: View {
                 // Timestamp
                 Text(item.createdAt.formatted(.relative(presentation: .named)))
                     .font(.caption2)
-                    .foregroundColor(.tertiaryLabel)
+                    .foregroundColor(.secondary)
             }
         }
         .padding(12)

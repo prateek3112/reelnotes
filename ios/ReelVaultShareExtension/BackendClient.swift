@@ -31,7 +31,7 @@ public final class BackendClient: Sendable {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(SharedStorage.shared.apiKey, forHTTPHeaderField: "X-API-Key")
-        request.timeoutInterval = 10.0  # Extensions must execute quickly
+        request.timeoutInterval = 10.0  // Extensions must execute quickly
 
         let payload = ["url": url.absoluteString]
         guard let body = try? JSONEncoder().encode(payload) else {

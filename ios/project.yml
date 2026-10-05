@@ -1,6 +1,6 @@
 name: ReelVault
 options:
-  bundleIdPrefix: com.reelvault
+  bundleIdPrefix: com.reelvaultprateek
   deploymentTarget:
     iOS: "17.0"
   xcodeVersion: "16.0"
@@ -26,7 +26,7 @@ targets:
       - target: ReelVaultShareExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.reelvault.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelvaultprateek.app
         INFOPLIST_FILE: ReelVault/Info.plist
         CODE_SIGN_ENTITLEMENTS: ReelVault/ReelVault.entitlements
         CODE_SIGN_STYLE: Automatic
@@ -48,7 +48,7 @@ targets:
       - path: Shared
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.reelvault.app.share
+        PRODUCT_BUNDLE_IDENTIFIER: com.reelvaultprateek.app.share
         INFOPLIST_FILE: ReelVaultShareExtension/Info.plist
         CODE_SIGN_ENTITLEMENTS: ReelVaultShareExtension/ReelVaultShareExtension.entitlements
         CODE_SIGN_STYLE: Automatic
