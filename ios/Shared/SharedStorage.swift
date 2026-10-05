@@ -30,7 +30,7 @@ public final class SharedStorage: @unchecked Sendable {
     }
 
     public var supabaseAnonKey: String {
-        get { defaults?.string(forKey: "supabase_anon_key") ?? "" }
+        get { defaults?.string(forKey: "supabase_anon_key") ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwbW5rbWF2a3FzaGduZHpoeHdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwOTg5NTEsImV4cCI6MjEwNTY3NDk1MX0.xbd1x0fukhOMYCJ2ELDNal6FWYRN6vzbPfI4DcY-U-Y" }
         set { defaults?.setValue(newValue, forKey: "supabase_anon_key") }
     }
 
