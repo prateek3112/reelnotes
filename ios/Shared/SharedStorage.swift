@@ -15,7 +15,7 @@ public final class SharedStorage: @unchecked Sendable {
     // MARK: - Configuration Keys
 
     public var apiBaseURLString: String {
-        get { defaults?.string(forKey: "api_base_url") ?? "http://localhost:8000" }
+        get { defaults?.string(forKey: "api_base_url") ?? "https://reelnotes-7cld.onrender.com" }
         set { defaults?.setValue(newValue, forKey: "api_base_url") }
     }
 
@@ -25,7 +25,7 @@ public final class SharedStorage: @unchecked Sendable {
     }
 
     public var supabaseURLString: String {
-        get { defaults?.string(forKey: "supabase_url") ?? "https://your-project.supabase.co" }
+        get { defaults?.string(forKey: "supabase_url") ?? "https://fpmnkmavkqshgndzhxwl.supabase.co" }
         set { defaults?.setValue(newValue, forKey: "supabase_url") }
     }
 
